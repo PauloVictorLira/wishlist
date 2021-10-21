@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+# wishlist
+
+Aplicação "lista de desejos" em ReactJS + Mobx-state-tree
+
+* Testes usando Jest
+* Soma dos produtos
+* CRUD (Entry, View, Edit, delete())
+* UI
+* Lista de usuários
+  
+## Screen:
+
+![image](https://user-images.githubusercontent.com/49046915/138334770-87fb7b26-9d5b-4645-abe8-45b540470506.png)
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
