@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import logo from '../assets/cart-icon-28356.png';
 
 import WishListView from "./WishListView"
+import { observer } from "mobx-react"
 
 class App extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">WishList</h1>
                 </header>
+                <button onClick={group.reload}>Recarregar</button>
                 <select onChange={this.onSelectUser}>
                     <option>- Selecione o Usuário -</option>
                     {/* Array.from converts an iterable to array, so that we can map over it */}
@@ -27,7 +29,8 @@ class App extends Component {
                         </option>
                     ))}
                 </select>
-                {selectedUser && <WishListView wishList={selectedUser.wishList} />}
+                <button onClick={group.drawLots}>Draw lots</button>
+                {selectedUser && <User user={selectedUser} />}
             </div>
         )
     }
@@ -37,4 +40,14 @@ class App extends Component {
     }
 }
 
-export default App
+const User = observer(({ user }) => (
+    <div>
+        <WishListView wishList={user.wishList} />
+        <button onClick={user.getSuggestions}>Sugestões</button>
+        <hr />
+        <h2>{user.recipient ? user.recipient.name : ""}</h2>
+        {user.recipient && <WishListView wishList={user.recipient.wishList} readonly />}
+    </div>
+))
+
+export default observer(App)

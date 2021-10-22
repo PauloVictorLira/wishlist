@@ -7,27 +7,9 @@ import { getSnapshot } from "mobx-state-tree"
 
 import { Group } from "./models/Group"
 
-let initialState = {
-    users: {
-        a342: {
-            id: "a342",
-            name: "Usuario1",
-            gender: "m"
-        },
-        "5fc2": {
-            id: "5fc2",
-            name: "Usuario2",
-            gender: "f"
-        },
-        "663b": {
-            id: "663b",
-            name: "Usuario3",
-            gender: "m"
-        }
-    }
-}
+let initialState = { users: {} }
 
-let group = Group.create(initialState)
+let group = (window.group = Group.create(initialState))
 
 function renderApp() {
     ReactDOM.render(<App group={group} />, document.getElementById("root"))
@@ -44,7 +26,7 @@ if (module.hot) {
     module.hot.accept(["./models/Group"], () => {
         // new model definitions
         const snapshot = getSnapshot(group)
-        group = Group.create(snapshot)
+        group = window.group = Group.create(snapshot)
         renderApp()
     })
 }
