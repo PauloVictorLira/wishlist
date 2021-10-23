@@ -1,6 +1,10 @@
 # wishlist
 
-Aplicação "lista de desejos" em ReactJS + Mobx-state-tree
+$ yarn install<br>
+$ yarn run json-server --port 3001 db.json<br>
+$ yarn start
+
+# Aplicação "lista de desejos" em ReactJS + Mobx-state-tree
 
 * Testes usando Jest
 * Soma dos produtos
@@ -10,7 +14,7 @@ Aplicação "lista de desejos" em ReactJS + Mobx-state-tree
   
 ## Screen:
 
-![image](https://user-images.githubusercontent.com/49046915/138334770-87fb7b26-9d5b-4645-abe8-45b540470506.png)
+![image](https://user-images.githubusercontent.com/49046915/138536190-fa27d28e-da18-437c-b8ba-821b9c6984f5.png)
 
 
 ## Getting Started with Create React App
