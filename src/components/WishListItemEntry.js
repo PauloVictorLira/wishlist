@@ -20,7 +20,7 @@ class WishListItemEntry extends Component {
         return (
             <div>
                 <WishListItemEdit item={this.state.entry} />
-                <button onClick={this.onAdd}>Adicionar</button>
+                <button onClick={this.onAdd} className="onAdd">Adicionar</button>
             </div>
         )
     }
